@@ -1,8 +1,11 @@
 ; ref, https://board.flatassembler.net/topic.php?t=3911
-; FASM 1.73.31
-; 2023-11-01, testing, .inc is created, but 0 bytes of file size, why ??
+; FASM 1.73.31, folder E:\FASM\INCLUDE
+; edit FASMW.INI,
+;   [Environment]
+;   Include=E:\fasm\INCLUDE
+; 2023-11-01, testing, msvcrt.inc is created, but 0 bytes of file size, why ??
 
-;; download from
+;; original source code download from,
 ;https://board.flatassembler.net/topic.php?p=204766
 
 format PE Console
@@ -23,7 +26,7 @@ library kernel32,'KERNEL32.DLL',\
 	user32,'USER32.DLL',\
 	msvcrt,'MSVCRT.DLL'
 
-import msvcrt,\
+import msvcrt,\ 	     ; modified import, assembly ok, xiaolaba
        abort,'abort',\
        abs,'abs',\
        acos,'acos',\
